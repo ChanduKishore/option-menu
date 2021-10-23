@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+body{font-family:arial}
+
+*{box-sizing:border-box;}
+.toggleButtonBase{
+  
+  width:30px;
+  height:15px;
+  border-radius:20px;
+  background:grey;
+  display:flex;
+  align-items:center;
+ transition:background 0.1s ease 0.1s;
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.circle{
+  background:white;
+  height:80%;
+  width:40%;
+  margin-left:5%;
+  box-shadow:-0.5px 0.5px 2px grey;
+  border-radius:50%;
+  transition: margin 0.2s ease-out, box-shadow 0.2s ease ;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.toggleOn{
+  margin-left:55%;
+  box-shadow:0.5px 0.5px 2px #00A339;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toggleButtonBaseActive{
+  background:#00B840;
 }
 
-.App-link {
-  color: #61dafb;
+.button{margin:10px}
+
+button{margin:5px;
+padding:10px 30px;
+border-radius:5px;
+border:1px solid;
+background:white;
+color:#650986;}
+
+button:active{
+  background:linear-gradient(to bottom right, #650986,#560872);
+  color:white;
+  border:1px solid #650986;
+  box-shadow:1px 1px 3px grey;
+}
+.label{
+  margin-bottom:2px;
+}
+.description{
+  margin-top:0;
+  margin-bottom:0;
+  color:grey;
+  font-size:80%
+  
+
+}
+.flex{display:flex;
+align-items:center}
+.space-between{justify-content:space-between}
+
+.optionsContainer{
+  width:500px;
+  margin:0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.optionsTab{
+  width:600px;
+  margin:0 auto;
+
+}
+
+.optionsHeader{
+  color:purple;
+  font-size:120%;
+}
+.optionsTabOuter{
+  width:900px;
+ box-shadow: 0 0 8px grey;
+  padding:50px;
+  border-radius:15px;
+  position: relative;
+  
+}
+
+.close{
+  color:grey;
+  border-width: 2px;
+  font-weight: bold;
+  border-radius:50%;
+  width:20px;
+  height:20px;
+  padding:0;
+  position: absolute;
+  top:10px;
+  right:10px;
+}
+
+.optionsMenu{
+  width:1100px;
+  box-shadow:0 0 8px grey;
+  display:flex;
+  border-radius: 15px;
+  margin:10px auto;
+}
+.menubar{
+  width:200px;
+}
+.menuOption{
+  padding:10px;
+  color:grey;
+  border-left: 5px solid transparent;
+  
+}
+.menuOption.active{
+  background: rgb(235, 233, 233);
+  color:purple;
+  border-left:5px solid
+}
+
+.menuTitle{
+  color:grey;
+  font-weight:100;
+  padding:0 15px
+
 }
