@@ -106,7 +106,7 @@ useEffect(()=>{
         <div className='optionsContainer'>
         {children}
       </div>
-      <Button className='active right' value='Save '/>
+      <button className='active right' >Save </button>
       </div>
       
       </div>
