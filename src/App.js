@@ -81,14 +81,14 @@ useEffect(()=>{
   
   function Options(){
   return ( <div>
-  <Option label='Moderation' description='review al questions before go live'/>
+  <Option label='Moderation' description='review all questions before go live'/>
   <Option label='Labels' description='Categorize and filter questions'/>
   <Option label='Downvotes' description='Enable downvoting of question'/>
   <Option label='Replies' description='Allow participants to reply comments or questions'/>
   <Option label='Anonymous questions' description='Let your participants send anonymous questions'/>
   <Option label='Maximum question length' description='Show number of votes instead of percentage'/>
   <Buttons/>
-  <Option label='Close questions' description='Prevent the paarticipants from sending new questions to your event'/>
+  <Option label='Close questions' description='Prevent the participants from sending new questions to your event'/>
   </div>)
   }
   
