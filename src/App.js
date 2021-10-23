@@ -28,24 +28,55 @@ useEffect(()=>{
   </div>)
   }
   
-  function Button(){
+  function Button({value,className,setActiveState,refNum}){
+    function handleActiveState(refNum){
+      const newArray= Array(3).fill('')
+      setActiveState(newArray.map((ele,index)=> {
+        return (index==refNum)
+        ?'active':''
+      }))
+    }
   return(
-  <button>100</button>
+  <button className={className} onClick={()=>handleActiveState(refNum)}>{value}</button>
   
   
   )
   }
   
+  function OptionWithIcon({label,description,labelStyle,icon}){
+    return (
+    <div className='flex space-between'>
+    <div className='flex center '>
+      {icon}
+    <h4 className={`label ${labelStyle}`}>{label}</h4>
+    </div>
+    <ToggleButton/>
+    </div>)
+  }
   function Option({label,description,labelStyle}){
   return (
   <div className='flex space-between'>
   <div>
+    
   <h4 className={`label ${labelStyle}`}>{label}</h4>
   <p className='description'>{description}</p>
   </div>
   <ToggleButton/>
   </div>)
   
+  }
+
+  function Buttons({children}){
+    const activeRefArray=Array(3).fill('')
+    const [activeState,setActiveState]=useState(activeRefArray)
+    activeRefArray[2]='active'
+    return(
+      <div className='buttons'>
+        <Button className={`small ${activeState[0]}`} value='100' setActiveState={setActiveState} refNum='0'/>
+        <Button className={`small ${activeState[1]}`} value='240'  setActiveState={setActiveState} refNum='1'/>
+        <Button  className={`small ${activeState[2]}`} value='300'  setActiveState={setActiveState} refNum='2'/>
+      </div>
+    )
   }
   
   function Options(){
@@ -56,6 +87,7 @@ useEffect(()=>{
   <Option label='Replies' description='Allow participants to rely comments or questions'/>
   <Option label='Anonymous questions' description='Let your participants send anonymous questions'/>
   <Option label='Maximum question length' description='Show number of votes instead of percentage'/>
+  <Buttons/>
   <Option label='Close questions' description='Prevent the paarticipants from sending new questions to your event'/>
   </div>)
   }
@@ -66,11 +98,15 @@ useEffect(()=>{
       <div className='optionsTabOuter'>
         <button className='close'>x</button>
         <div className='optionsTab'>
-        <Option label='Audience Q&A' labelStyle='optionsHeader' />
+        <OptionWithIcon
+        label='Audience Q&A' 
+        labelStyle='optionsHeader' 
+        icon={<img className='small-icon' src='./logo/chat2.png'/>} />
         <hr style={{marginTop:'25px'}}/>
         <div className='optionsContainer'>
         {children}
       </div>
+      <Button className='active right' value='Save '/>
       </div>
       
       </div>
