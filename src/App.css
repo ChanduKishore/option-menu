@@ -3,9 +3,9 @@ body{font-family:arial}
 *{box-sizing:border-box;}
 .toggleButtonBase{
   
-  width:30px;
-  height:15px;
-  border-radius:20px;
+  width:20px;
+  height:10px;
+  border-radius:10px;
   background:grey;
   display:flex;
   align-items:center;
@@ -19,7 +19,7 @@ body{font-family:arial}
   height:80%;
   width:40%;
   margin-left:5%;
-  box-shadow:-0.5px 0.5px 2px grey;
+  box-shadow:-0.2px 0.2px 1px rgb(179, 178, 178);
   border-radius:50%;
   transition: margin 0.2s ease-out, box-shadow 0.2s ease ;
   
@@ -27,7 +27,7 @@ body{font-family:arial}
 
 .toggleOn{
   margin-left:55%;
-  box-shadow:0.5px 0.5px 2px #00A339;
+  box-shadow:0.2px 0.2px 1px #00A339;
 }
 
 .toggleButtonBaseActive{
@@ -47,31 +47,34 @@ button:active{
   background:linear-gradient(to bottom right, #650986,#560872);
   color:white;
   border:1px solid #650986;
-  box-shadow:1px 1px 3px grey;
+  box-shadow:1px 1px 3px rgb(179, 178, 178);
 }
 .label{
   margin-bottom:2px;
+  font-size:90%;
+  
 }
 .description{
   margin-top:0;
   margin-bottom:0;
   color:grey;
-  font-size:80%
+  font-size:70%
   
 
 }
 .flex{display:flex;
-align-items:center}
+}
+.flex.center{align-items:center}
 .space-between{justify-content:space-between}
 
 .optionsContainer{
-  width:500px;
+  width:85%;
   margin:0 auto;
 }
 
 .optionsTab{
-  width:600px;
-  margin:0 auto;
+  width:65%;
+  margin:0 15%;
 
 }
 
@@ -80,9 +83,9 @@ align-items:center}
   font-size:120%;
 }
 .optionsTabOuter{
-  width:900px;
- box-shadow: 0 0 8px grey;
-  padding:50px;
+  width:80%;
+ box-shadow: 0 0 8px rgb(179, 178, 178);
+  padding:30px calc(50px - 10vw);
   border-radius:15px;
   position: relative;
   
@@ -102,14 +105,15 @@ align-items:center}
 }
 
 .optionsMenu{
-  width:1100px;
-  box-shadow:0 0 8px grey;
+  width:80%;
+  font-size:80%;
+  box-shadow:0 0 8px rgb(179, 178, 178);
   display:flex;
   border-radius: 15px;
-  margin:10px auto;
+  margin:20px auto;
 }
 .menubar{
-  width:200px;
+  width:20%;
 }
 .menuOption{
   padding:10px;
@@ -126,6 +130,116 @@ align-items:center}
 .menuTitle{
   color:grey;
   font-weight:100;
-  padding:0 15px
+  padding:0 15px;
 
 }
+
+nav,aside{
+  box-shadow: 0 0 5px rgb(179, 178, 178);
+  background: white;
+
+}
+
+nav{padding:20px 0}
+
+aside{
+  height:100vh;
+  
+}
+nav .container{
+  
+  width: 100%;
+  padding:0 96px;
+  height:40px;
+  
+
+}
+
+
+aside.right{
+  position: absolute;
+  right:0;
+  top:0;
+  width:80px;
+
+}
+aside.left{
+  position: absolute;
+  left:0;
+  top:0;
+  width:80px;
+  
+}
+
+@media(width <= 960px){
+  .optionsMenu{width:768px;
+  margin:20px 96px}
+  nav{width:960px}
+
+  aside{ left:880px}
+}
+
+img{max-width: 100%;
+}
+.icon{
+  width:40%;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+.icon-container p{
+  
+   text-align: center;
+   color:purple;
+  font-size:0.6rem;
+  margin-top:5px;  
+
+}
+
+.icon-container.border{
+  border:2px solid purple;
+  border-radius:5px;
+  margin: 5px;
+}
+
+.icon-container{
+  margin:30px 0;
+  padding: 0 5px;
+}
+p.inactive{color: grey;}
+
+.profile{ width:70%;
+}
+.small-icons{
+  
+  width:15px;
+ 
+}
+.small-icon-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 3px;
+  width:25px;
+  height:25px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.border{
+  border: 1px solid;}
+
+  nav .border{
+    padding: 0;
+    border-radius: 5px;
+    padding:10px;
+    color: grey;
+  }
+
+  nav h2{
+    margin:10px
+  }
+
+  .options{
+    width:25px;
+    
+  }

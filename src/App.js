@@ -91,7 +91,7 @@ useEffect(()=>{
     </div>)
   }
 
-  function OptionsMenu({children}){
+  function OptionsMenu(){
     const StateRefArray=Array(7).fill('')
     const [activeState,setActiveState]=useState(StateRefArray)
     StateRefArray[2]='active'
@@ -110,19 +110,81 @@ useEffect(()=>{
           <MenuOption label='Session Settings' active={activeState[5]} refNum='5' setActiveState={setActiveState}/>
           <MenuOption label='My plans' active={activeState[6]} refNum='6' setActiveState={setActiveState}/>
         </div>
-        {children}
+        <OptionsContainer>
+          <Options/>
+        </OptionsContainer>
       </div>
     )
       
 
   }
+
+
   function App(){
   return (
-    <OptionsMenu>
-      <OptionsContainer>
-    <Options/>
-  </OptionsContainer>
-    </OptionsMenu>
+    <div >
+
+      <aside className='left'>
+      <img  src='./logo/logo.png' alt='events icon'/>
+
+        <center className='icon-container'>
+          <img className='icon' src='./logo/events.png' alt='events icon'/>
+       <p>Event</p>
+       </center>
+
+       <center className='icon-container border'>
+          <img className='icon' src='./logo/groups.png' alt='teams icon'/>
+       <p>Teams</p>
+       </center>
+
+       <center className='icon-container '>
+          <img className='icon' src='./logo/analysis.png' alt='teams icon'/>
+       <p className='inactive'>Analytics</p>
+       </center>
+       <center className='icon-container '>
+          <img className='icon' src='./logo/results.png' alt='teams icon'/>
+       <p className='inactive'>Results</p>
+       </center>
+      </aside>
+      <div className='workSpace'>
+    <nav >
+
+      <div className='container flex space-between'>
+            <div className='flex center'>
+          <img className='options' src='./logo/options.png' alt='teams icon'/>
+              <h2>Admin Dashboard</h2>
+              </div>
+
+            <div className='flex center border'>
+              <p className='inactive'>Preview on:</p>
+              <div className='small-icon-container'>
+                <img className='small-icons' src='./logo/laptop.jpg'/>
+                </div>
+                <div className='small-icon-container'>
+                <img className='small-icons' src='./logo/mobile.png'/>
+                </div>
+            </div>
+
+      </div>
+    </nav>
+    
+    <OptionsMenu/>
+    </div>
+    <aside className='right'>
+          <center className='profile-container '>
+          <img className='profile' src='./logo/profile.jpg' alt='profile icon'/>
+       </center>
+    <center className='icon-container '>
+          <img className='icon' src='./logo/notifications.png' alt='notifications icon'/>
+       </center>
+       <center className='icon-container '>
+          <img className='icon' src='./logo/chat.png' alt='chat icon'/>
+       </center>
+       <center className='icon-container '>
+          <img className='icon' src='./logo/settings.png' alt='settings icon'/>
+       </center>
+    </aside>
+    </div>
   )
   }
   
